@@ -13,14 +13,14 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638215550288393469
-    m_Hash: 2986608602
+      ticks: 638215642899071523
+    m_Hash: 1407160299
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: C:/Users/Johanna/Desktop/Project_unity/Escape-theeeeeeee/Escape_the/Packages
-m_EditorVersion: 2021.3.24f1 (cf10dcf7010d)
+m_EditorVersion: 2021.3.22f1 (b6c551784ba3)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.0.3
   testable: 0
@@ -111,6 +111,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
+    - 2.0.1
     - 2.0.3
     - 2.0.4
     - 2.1.0-preview.3
@@ -153,7 +154,7 @@ m_ResolvedPackages:
     revision: c189c3bb7a025aa19e1f0ab8851a09a34ff94016
     path: 
   unityLifecycle:
-    version: 2.0.3
+    version: 2.0.1
     nextVersion: 
 - packageId: com.unity.feature.development@1.0.1
   testable: 0
@@ -302,6 +303,7 @@ m_ResolvedPackages:
     - 3.0.21
     - 3.0.22
     compatible:
+    - 3.0.18
     - 3.0.20
     - 3.0.21
     - 3.0.22
@@ -332,7 +334,7 @@ m_ResolvedPackages:
     revision: b0b5d281f6e3a1b7e7c73939f5ed03dc0668bcc1
     path: 
   unityLifecycle:
-    version: 3.0.20
+    version: 3.0.18
     nextVersion: 
 - packageId: com.unity.ide.visualstudio@2.0.18
   testable: 0
@@ -378,6 +380,7 @@ m_ResolvedPackages:
     - 2.0.17
     - 2.0.18
     compatible:
+    - 2.0.17
     - 2.0.18
     verified: 2.0.18
   dependencies:
@@ -412,7 +415,7 @@ m_ResolvedPackages:
     revision: 9d3c07127cbe1916b8abbfd18f71fb8d9df8008c
     path: 
   unityLifecycle:
-    version: 2.0.18
+    version: 2.0.17
     nextVersion: 
 - packageId: com.unity.ide.vscode@1.2.5
   testable: 0
