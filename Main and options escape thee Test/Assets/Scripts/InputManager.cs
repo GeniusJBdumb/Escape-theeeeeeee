@@ -18,6 +18,11 @@ public class InputManager : MonoBehaviour
         playerInput = new PlayerInput(); // create new instance of class PlayerInput
         onFoot = playerInput.OnFoot; 
         motor = GetComponent<PlayerMotor>();
+
+        // for jump action
+        // any time jump is performed use "call back context" and call jump function
+        onFoot.Jump.performed += ctx => motor.Jump(); // create pointer to jump function
+    
     }
 
     // Update is called once per frame
