@@ -332,6 +332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gravity: -9.81
+  jumpHeight: 1
 --- !u!114 &1221767833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +346,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3d677f99707a742901f4e98198cb8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1221767834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221767831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ff3ffed5b108046bd773eabf96bcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 4037723401885793388}
+  xSensitivity: 30
+  ySensitivity: 30
 --- !u!1001 &4037723401885793387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,3 +418,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0a32b1c8dd4bb949976a2f730a1dd49, type: 3}
+--- !u!20 &4037723401885793388 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4037723402575155480, guid: e0a32b1c8dd4bb949976a2f730a1dd49, type: 3}
+  m_PrefabInstance: {fileID: 4037723401885793387}
+  m_PrefabAsset: {fileID: 0}

@@ -11,13 +11,19 @@ public class InputManager : MonoBehaviour
     
     private PlayerInput playerInput; // reference to c# player input script
     private PlayerInput.OnFootActions onFoot; // reference to movement
-    private PlayerMotor motor;// property for player movement script
+
+    private PlayerMotor motor; // property for player movement script
+    private PlayerLook look; // property for player look script
+
     // Start is called before the first frame update
     void Awake()
     {
-        playerInput = new PlayerInput(); // create new instance of class PlayerInput
+        // create new instance of class PlayerInput and get all info needed for movement
+        playerInput = new PlayerInput(); 
         onFoot = playerInput.OnFoot; 
+
         motor = GetComponent<PlayerMotor>();
+        look = GetComponent<PlayerLook>();
 
         // for jump action
         // any time jump is performed use "call back context" and call jump function
@@ -32,6 +38,14 @@ public class InputManager : MonoBehaviour
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>()); 
     }
 
+    private void LateUpdate()
+    {
+        // "playermotor look around with values you get from rotation action"
+        look.ProcessLook(onFoot.Look.ReadValue<Vector2>()); 
+
+    }
+    
+    
     // to use inputs in awake -> enable action map (same for disabeling)
     private void OnEnable()
     {
