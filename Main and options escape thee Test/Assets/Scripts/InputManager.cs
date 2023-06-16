@@ -10,6 +10,8 @@ public class InputManager : MonoBehaviour
 {
     
     private PlayerInput playerInput; // reference to c# player input script
+
+    // tried to make it private and a getter function but still did not work
     public PlayerInput.OnFootActions onFoot; // reference to movement
 
     private PlayerMotor motor; // property for player movement script
@@ -44,8 +46,14 @@ public class InputManager : MonoBehaviour
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>()); 
 
     }
-    
-    
+    // thought that would be work around for problemin player interact script is not am going with the public access
+    //function to get status for onFoot variable
+    //public void GetonFoot()
+    //{
+     //   return onFoot;
+    //}
+
+
     // to use inputs in awake -> enable action map (same for disabeling)
     private void OnEnable()
     {

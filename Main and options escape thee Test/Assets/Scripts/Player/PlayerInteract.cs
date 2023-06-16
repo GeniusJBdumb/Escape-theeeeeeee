@@ -22,6 +22,7 @@ public class PlayerInteract : MonoBehaviour
         cam = GetComponent<PlayerLook>().cam; // can get cam like this bcs. already attached to player
         playerUI = GetComponent<PlayerUI>(); // get UI via playerUI script
         inputManager = GetComponent<InputManager>(); // assign Inputmanager
+
     }
 
     // going to do ray cast
@@ -55,6 +56,7 @@ public class PlayerInteract : MonoBehaviour
                 playerUI.UpdateText(interactable.promptMessage);
                 
                 // each time when player changes state of interact action -> triggered becomes true
+                
                 if(inputManager.onFoot.Interact.triggered)
                 {
                     interactable.BaseInteract(); // in BaseInteract calling Interact function -> will run interact function in script for object e.g. Keypad
