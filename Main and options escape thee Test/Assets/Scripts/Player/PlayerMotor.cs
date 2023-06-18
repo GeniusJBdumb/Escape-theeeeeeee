@@ -12,6 +12,8 @@ public class PlayerMotor : MonoBehaviour
     public float speed = 5f;
     public float gravity = -9.81f; // how big is gravity (is downward force-> negative); this is earths one
     public float jumpHeight = 1f; // how heig we want to be able to jump
+
+    public Inventory inventory; // reference to inventory script
     
     // Start is called before the first frame update
     void Start()
@@ -61,5 +63,19 @@ public class PlayerMotor : MonoBehaviour
 
             // set the velocity and allow to jump by considering the gravity  and the settled height
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+    }
+
+    // for collision with collection items (are different from interaction items)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // if playercontroller collides with object c
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        
+        // check if we have item that can be put in inventory 
+        if (item != null)
+        {
+            // if it is the case -> add item to inventory
+            inventory.AddItem(item);
+        }
     }
 }
