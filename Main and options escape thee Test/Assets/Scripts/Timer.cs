@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -22,6 +23,8 @@ public class Timer : MonoBehaviour
     // dictionary for the format key and the given string output for the format
     private Dictionary<TimerFormats, string> timeFormats = new Dictionary<TimerFormats, string>();
 
+    public UnityEvent gameOverEvent;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +45,17 @@ public class Timer : MonoBehaviour
         {
             currentTime = timerLimit;
             // update  taext and stop timer
-            SetTimerText();
+            // SetTimerText();
             timerText.color = Color.red;
             enabled = false;
+            gameOverEvent.Invoke(); // end the Game
+            timerText.text = "GAME OVER";
         }
-        SetTimerText(); // set a text
+        else
+        {
+            SetTimerText(); // set a text
+
+        }
     }
 
     private void SetTimerText()

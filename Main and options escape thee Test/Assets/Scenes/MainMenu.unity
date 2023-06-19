@@ -693,11 +693,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0.88473916, b: 0.6839622, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 1}
-    m_PressedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 1}
-    m_SelectedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 1}
-    m_DisabledColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 1}
+    m_NormalColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 0.627451}
+    m_HighlightedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 0.627451}
+    m_PressedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 0.627451}
+    m_SelectedColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 0.627451}
+    m_DisabledColor: {r: 1, g: 0.8862745, b: 0.68235296, a: 0.627451}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2060,27 +2060,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are the Manager of the Restaurant called "The big B" and since everything
-    works fine, you decide to take a quick nap. As you wake up you notice that everone
-    is gone and that it smells like fire. And this is what you encounter as you enter
-    the main dining hall. A fire blocking the exit.
+  m_text: 'You are the Manager of the Restaurant "The big B" and you decided to take
+    a quick nap. As you wake up you notice that it smells like fire. A fire is blocking
+    the exit. Your task is to escape the restaurant and save yourself.
 
-    Your task is to escape the
-    restaurant and save yourself.
+    Movement:
 
-    To do this, you need to find clues and solve
-    puzzles to get the fire extinguisher and extinguish the fire.
+    -
+    You can move with the "WASD" keys and rotate with the mouse.
 
-    You can move
-    with the file keys and rotate by klicking and holding the mouse curser.
+    - With the
+    curser and left key you can drag and drop objects from the inventory.
 
-    With
-    the curser you can klick on objects and some of them might be saved in your inventar
-    and which can be applied at another place.
+    -
+    Collector objects can be colleced by colliding with them.
 
-    On the bottom right you see a
-    map for orientation and you can pause the game with the button in the left bottom
-    corner.
+    - Interaction
+    objects can be used by klicking "E".
+
+    - You can Pause and resume with "P".
+
+    -
+    You can jump with the "space" key.
+
+    Caution:
+
+    When the time is up, then
+    you have lost because you died from smoke poisoning.
 
     Have fun and good luck!'
   m_isRightToLeft: 0
