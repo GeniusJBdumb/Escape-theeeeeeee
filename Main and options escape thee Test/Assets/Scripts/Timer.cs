@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
     [Header("Format Settings")]
     public bool hasFormat;
     public TimerFormats format;
+
     // dictionary for the format key and the given string output for the format
     private Dictionary<TimerFormats, string> timeFormats = new Dictionary<TimerFormats, string>();
 
@@ -37,14 +38,15 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // tell current time to in or decrease dependent of value of countdown
+        // If countdown = True, we decrease the time shown in timer
+        // If countdown = False, we increase the time shown in timer
         currentTime = countDown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
         
-        // if we have a limit and are going below or over the limit
+        // if we have a limit and are going below/over the limit
         if(hasLimit && ((countDown && currentTime <= timerLimit) || (!countDown && currentTime >= timerLimit)))
         {
             currentTime = timerLimit;
-            // update  taext and stop timer
+            // update text and stop timer
             // SetTimerText();
             timerText.color = Color.red;
             enabled = false;

@@ -8,10 +8,10 @@ public class PlayerMotor : MonoBehaviour
     
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool isGrounded; // if  gravity
+    private bool isGrounded; // if gravity
     public float speed = 5f;
-    public float gravity = -9.81f; // how big is gravity (is downward force-> negative); this is earths one
-    public float jumpHeight = 1f; // how heig we want to be able to jump
+    public float gravity = -9.81f; // how big is gravity (is downward force-> negative); based on the earth
+    public float jumpHeight = 1f; // set the height we want to be able to jump
 
     public Inventory inventory; // reference to inventory script
     
@@ -28,7 +28,7 @@ public class PlayerMotor : MonoBehaviour
         isGrounded = controller.isGrounded;
     }
 
-    // receives inputs for input manager script (InputManager.cs) and applies them to character controller
+    // receives inputs for InputManager.cs and applies them to character controller
     public void ProcessMove(Vector2 input) // coordinate input vector for position
     {
         Vector3 moveDirection = Vector3.zero;
