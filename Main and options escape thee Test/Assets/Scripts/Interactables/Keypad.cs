@@ -11,7 +11,7 @@ public class Keypad : Interactable // inherite from interactable
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,11 +20,15 @@ public class Keypad : Interactable // inherite from interactable
         
     }
 
-    // ovverrides function in parent class for individual interaction
-    protected override void Interact()
+    // overrides function in parent class Interactable. It is used for individual interactions for different types of Interactables
+    public void Interact()
     {
-        doorOpen = !doorOpen; // toggles between true or false
-        door.GetComponent<Animator>().SetBool("IsOpen", doorOpen); // the animation
-        Debug.Log("Interacted with " + gameObject.name);
+        if(useEvents)
+        {
+            doorOpen = !doorOpen; // toggles between true or false
+            door.GetComponent<Animator>().SetBool("IsOpen", doorOpen); // the animation
+            Debug.Log("Interacted with " + gameObject.name);
+        }
+
     }
 }

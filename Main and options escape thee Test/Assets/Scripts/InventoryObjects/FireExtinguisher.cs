@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from the IInventoryItem class
 {
+    [SerializeField]
+    string extinguishingAgent;
+
     // give object a name and an image to put in inventory later
     public string Name
     {
@@ -26,7 +30,7 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
 
     }
     
-    // pwhen the object is picked up
+    // when the object is picked up
     public void OnPickup()
     {
         // here add logic when pick up extinguisher if we need to but basically we only
@@ -37,7 +41,7 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
     // when the object is droped again
     public void OnDrop()
     {
-        // NEeD to move following logic to s bsse class or heloer mehtod to reuse it
+        // Need to move following logic to s bsse class or helper method to reuse it
         RaycastHit hit = new RaycastHit();
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePosition); //  raycast to center of screen;    
@@ -49,6 +53,42 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
             gameObject.SetActive(true);
             gameObject.transform.position = hit.point;
         }
+    }
+
+    // Triggered when the collider of the Fire extinguisher hits another collider
+    public void OnTriggerEnter(Collider other)
+    {   
+        //check whether the fire extinguisher is suitable for the fire (properties defined by us on the gameobject)
+        if(extinguishingAgent == other.gameObject.GetComponent<Fire>().howToExtinguish)
+        {
+        other.gameObject.SetActive(false); //deactivate the fire
+        }
+
+        else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "Powder")
+        {
+            Debug.Log("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!");
+        }
+        else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "Foam")
+        {
+            Debug.Log("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!");
+        }
+        else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "CO2")
+        {
+            Debug.Log("I should not release any gas in this place. Gosh, I don't want to suffocate here!");
+        }
+
+        
+        //In case there are mutliple Flames to be extinguished with the same FireExtinguisher Object,
+        // we only want to remove the extinguisher from the Scene when all fires of the specific type are disabled/extinguished
+
+        Fire[] flames = FindObjectsOfType<Fire>();
+        
+        if(! Array.Exists(flames, element => element.GetComponent<Fire>().howToExtinguish == extinguishingAgent)) //If there is not such a fire 
+        {
+            gameObject.SetActive(false); //deactivate fire extinguisher
+
+        }
+
     }
 
 }

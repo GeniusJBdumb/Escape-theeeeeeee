@@ -53,6 +53,7 @@ public class Inventory : MonoBehaviour
             {
                 collider.enabled = true; // enable the item in the scene again
             }
+
             
             // say all involved parties that need to now about event that something happened
             if(ItemRemoved != null)

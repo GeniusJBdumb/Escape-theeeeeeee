@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler
 {
     private InputManager inputManager; // reference to input manager NO NEED??????
     public IInventoryItem Item {get; set;} // reference to inventoryitem e.g. fireextinguisher
@@ -27,15 +27,11 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
         // reset position of itemimage
         transform.localPosition = Vector3.zero;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        
+        //Output to console the GameObject's name and the following message
+        Debug.Log(Item.Name);
     }
+    
 }

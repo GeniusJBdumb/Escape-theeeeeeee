@@ -1,4 +1,4 @@
-// contains all logic to detect interactables and handles player input for bjects
+// contains all logic to detect interactables and handles player input for objects
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +44,7 @@ public class PlayerInteract : MonoBehaviour
         // raycast to center of screen; use raycast function to check if hit something (will return bool)
         if(Physics.Raycast(ray, out hitInfo, distance, mask)) // with out getting value for hitInfo
         {
-            // check if we actually had a collition with interactable component
+            // check if we actually had a collision with interactable component
             if(hitInfo.collider.GetComponent<Interactable>() != null)
             {
                 // if had collision

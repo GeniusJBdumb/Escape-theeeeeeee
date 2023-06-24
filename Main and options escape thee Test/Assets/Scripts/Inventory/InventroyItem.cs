@@ -11,7 +11,7 @@ public interface IInventoryItem {
     void OnDrop(); // when player drops item in scene
 }
 
-// inventory will rais events when an event is raised
+// inventory will raise events when an event is raised
 public class InventoryEventArgs : EventArgs
 {
     public InventoryEventArgs(IInventoryItem item)
