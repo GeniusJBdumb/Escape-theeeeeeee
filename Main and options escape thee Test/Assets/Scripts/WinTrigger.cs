@@ -9,7 +9,6 @@ public class WinTrigger : MonoBehaviour
 {   
     public static TMP_Text textToPass;
 
-
     // if player collides with the floor the game is won -> go to win scene
     void OnTriggerEnter(Collider other)
     {
@@ -18,9 +17,5 @@ public class WinTrigger : MonoBehaviour
         textToPass = GameObject.FindWithTag("Time").GetComponent<TMP_Text>();
         Debug.Log("found text and passed it");
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

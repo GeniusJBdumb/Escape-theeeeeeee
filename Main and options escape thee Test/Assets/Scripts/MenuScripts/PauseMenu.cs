@@ -65,6 +65,19 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    public void Options()
+    {
+        // we deactivate the pause menu panel
+        pauseMenu.SetActive(false);
+
+        // for pausing stop ingame clock -> zero
+        Time.timeScale = 0f;
+        isPaused = true;
+
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
+
     //public void HitCube()
     //{
      //   if(isPaused == false)
