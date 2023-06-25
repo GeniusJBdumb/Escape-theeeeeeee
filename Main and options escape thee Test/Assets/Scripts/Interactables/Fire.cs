@@ -36,6 +36,7 @@ public class Fire : Interactable // inherite from Interactable
     public void OnDisable()
     {
         blockedObject.GetComponent<Interactable>().useEvents = true;
+        StartCoroutine(displayInfo("Puuh, that was close!"));
     }
 
 }

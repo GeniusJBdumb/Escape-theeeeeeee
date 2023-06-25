@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using TMPro;
 
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private InputManager inputManager; // reference to input manager NO NEED??????
     public IInventoryItem Item {get; set;} // reference to inventoryitem e.g. fireextinguisher
@@ -28,8 +29,14 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPo
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        //Output to console the GameObject's name and the following message
-        Debug.Log(Item.Name);
+        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        infoline.text = Item.Name;
     }
-    
+
+    public void OnPointerExit(PointerEventData pointerEventData)
+    {
+        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        infoline.text = "";
+    }
+
 }

@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from the IInventoryItem class
+public class FireExtinguisher : Interactable, IInventoryItem // inherites from the IInventoryItem class
 {
     [SerializeField]
     string extinguishingAgent;
@@ -14,7 +14,7 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
     {
         get
         {
-            return "FireExtinguisher";
+            return gameObject.name;
         }
     }
 
@@ -64,17 +64,18 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
         other.gameObject.SetActive(false); //deactivate the fire
         }
 
+        //here we give the Player hints on why they can not use the extinugisher on the fire
         else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "Powder")
         {
-            Debug.Log("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!");
+            StartCoroutine(displayInfo("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!"));
         }
         else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "Foam")
         {
-            Debug.Log("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!");
+            StartCoroutine(displayInfo("I don't want to have Powder all over this place. I will never be all to clean all this mess. I should find another!"));
         }
         else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish && extinguishingAgent == "CO2")
         {
-            Debug.Log("I should not release any gas in this place. Gosh, I don't want to suffocate here!");
+            StartCoroutine(displayInfo("I should not release any gas in this place. Gosh, I don't want to suffocate here!"));
         }
 
         
