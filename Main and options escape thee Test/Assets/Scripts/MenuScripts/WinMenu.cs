@@ -25,7 +25,6 @@ public class WinMenu : MonoBehaviour
     {
         // go to play scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-
     }
 
     // if Quit gets pressed end game
@@ -45,9 +44,4 @@ public class WinMenu : MonoBehaviour
         updater.UpdateText(targetTextMesh.text); // update the text at the object (the time needed button which contains the text see win menu canvas script assignment)
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

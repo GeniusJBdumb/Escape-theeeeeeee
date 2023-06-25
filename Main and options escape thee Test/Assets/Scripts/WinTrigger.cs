@@ -12,7 +12,6 @@ public class WinTrigger : MonoBehaviour
     // if player collides with the floor the game is won -> go to win scene
     void OnTriggerEnter(Collider other)
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         textToPass = GameObject.FindWithTag("Time").GetComponent<TMP_Text>();
         Debug.Log("found text and passed it");

@@ -86,9 +86,6 @@ public class FireExtinguisher : MonoBehaviour, IInventoryItem // inherites from 
         if(! Array.Exists(flames, element => element.GetComponent<Fire>().howToExtinguish == extinguishingAgent)) //If there is not such a fire 
         {
             gameObject.SetActive(false); //deactivate fire extinguisher
-
         }
-
     }
-
 }

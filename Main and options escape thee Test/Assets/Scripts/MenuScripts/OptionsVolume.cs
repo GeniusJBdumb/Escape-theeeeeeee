@@ -15,7 +15,7 @@ public class OptionsVolume : MonoBehaviour
         if(!PlayerPrefs.HasKey("musicVolumne"))
         {
             PlayerPrefs.SetFloat("musicVolumne", 1);
-            Load();
+            Load();  //load from other scenes
         }
 
     }
@@ -30,8 +30,7 @@ public class OptionsVolume : MonoBehaviour
 
     public void Load()
     {
-        slider.value = PlayerPrefs.GetFloat("musicVolumne");
-
+        slider.value = PlayerPrefs.GetFloat("musicVolumne"); //save the Value across the scenes
     }
     
     public void Save()

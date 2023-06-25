@@ -17,7 +17,6 @@ public class PauseMenu : MonoBehaviour
        // hitCube = false;
         inputManager = GetComponent<InputManager>(); // assign Inputmanager
         isPaused = false;
-
     }
     
     void Update()

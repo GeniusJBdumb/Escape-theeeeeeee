@@ -19,10 +19,9 @@ public class Fire : Interactable // inherite from Interactable
 
         // We want to use the fire to block the interaction with the Keypad.
         // We implement this by disabeling the useEvent bool from the Interactable as long as it is active.
-
+        if (blockedObject != null){
             try
             {
-
                 blockedObject.GetComponent<Interactable>().useEvents = false;
                 
             }
@@ -31,12 +30,11 @@ public class Fire : Interactable // inherite from Interactable
                 Debug.LogWarning(e);
                 throw;
             }
-            
+        }
     }
 
     public void OnDisable()
     {
-
         blockedObject.GetComponent<Interactable>().useEvents = true;
     }
 

@@ -21,16 +21,6 @@ public abstract class Interactable : MonoBehaviour
     {
         if (useEvents)
              GetComponent<InteractionEvent>().OnInteract.Invoke(); // event component for interaction (should never be null since use Editor script)
-
-
-        // if (useEvents)
-        //     GetComponent<InteractionEvent>().OnInteract.Invoke(); // event component for interaction (should never be null since use Editor script)
-        // Interact();
     }
-
-    // protected virtual void Interact()
-    // {
-    //     // template function which gets overwritten by subclasses like Buttons, or other objects
-    // }
 
 }

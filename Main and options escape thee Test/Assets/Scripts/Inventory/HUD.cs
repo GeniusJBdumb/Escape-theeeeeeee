@@ -13,7 +13,6 @@ public class HUD : MonoBehaviour
     {
         Inventory.ItemAdded += InventoryScript_ItemAdded; // to notify itemadded event if item is added
         Inventory.ItemRemoved += Inventory_ItemRemoved; // to notify itemadded event if item is added
-    
     }
 
     // function to handle inventory adding
@@ -44,8 +43,6 @@ public class HUD : MonoBehaviour
                 // need to add what happence if store item smth like referecne to object
                 break;
             }
-
-
         }
     }
 
@@ -76,9 +73,7 @@ public class HUD : MonoBehaviour
                 itemDragHandler.Item = null;
                 break;
             }
-
         }
     }
 
-    
 }
