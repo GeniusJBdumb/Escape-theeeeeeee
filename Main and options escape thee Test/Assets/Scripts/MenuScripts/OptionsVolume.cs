@@ -15,6 +15,9 @@ public class OptionsVolume : MonoBehaviour
         if(!PlayerPrefs.HasKey("musicVolumne"))
         {
             PlayerPrefs.SetFloat("musicVolumne", 1);
+        }
+        else
+        {
             Load();  //load from other scenes
         }
 
