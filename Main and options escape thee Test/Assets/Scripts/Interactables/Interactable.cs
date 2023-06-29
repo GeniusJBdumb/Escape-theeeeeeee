@@ -25,7 +25,7 @@ public abstract class Interactable : MonoBehaviour
     
     // This is function is called within the child classes using StartCoroutine(displayInfo(text))
     // It is used to display Infotext above the Inventory for a certain amount of time
-    public IEnumerator displayInfo(string text, int time = 2)
+    public IEnumerator displayInfo(string text, int time = 5)
     {
         TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = text;

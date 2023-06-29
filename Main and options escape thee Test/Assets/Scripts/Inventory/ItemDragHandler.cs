@@ -17,6 +17,9 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPo
     {
         // position of transform (itemimage in inventory) being mousecursor
         transform.position = Mouse.current.position.ReadValue();
+        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        infoline.text = "";
+
     }
     
 

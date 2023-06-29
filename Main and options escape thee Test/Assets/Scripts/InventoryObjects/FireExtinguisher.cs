@@ -61,7 +61,8 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
         //check whether the fire extinguisher is suitable for the fire (properties defined by us on the gameobject)
         if(extinguishingAgent == other.gameObject.GetComponent<Fire>().howToExtinguish)
         {
-        other.gameObject.SetActive(false); //deactivate the fire
+            StartCoroutine(displayInfo("Puuh, that was close!",2));
+            other.gameObject.SetActive(false); //deactivate the fire
         }
 
         //here we give the Player hints on why they can not use the extinugisher on the fire
