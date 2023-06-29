@@ -29,7 +29,9 @@ public abstract class Interactable : MonoBehaviour
     {
         TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = text;
+        Debug.Log("Vor yield");
         yield return new WaitForSeconds(time);
+        Debug.Log("Nach yield");
         infoline.text = "";
     }
 

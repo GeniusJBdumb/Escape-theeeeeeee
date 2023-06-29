@@ -27,6 +27,7 @@ public class Inventory : MonoBehaviour
                 mItems.Add(item); // add item to list
                 item.OnPickup(); // pick up item 
 
+
                 // say all involved parties that need to now about event that something happened
                 if (ItemAdded != null)
                 {

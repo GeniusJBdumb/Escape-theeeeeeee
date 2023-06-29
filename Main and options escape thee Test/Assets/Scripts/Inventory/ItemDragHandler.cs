@@ -11,15 +11,20 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPo
 {
     private InputManager inputManager; // reference to input manager NO NEED??????
     public IInventoryItem Item {get; set;} // reference to inventoryitem e.g. fireextinguisher
+    public TextMeshProUGUI infoline;
+
+    void Start()
+    {
+        infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>(); //Get the Info Line
+    }
 
     // to start on drag function
     public void OnDrag(PointerEventData eventData)
     {
         // position of transform (itemimage in inventory) being mousecursor
         transform.position = Mouse.current.position.ReadValue();
-        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        //TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = "";
-
     }
     
 
@@ -32,13 +37,12 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPo
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = Item.Name;
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        //TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = "";
     }
 

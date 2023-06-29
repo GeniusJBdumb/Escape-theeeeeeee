@@ -10,14 +10,12 @@ public class InputManager : MonoBehaviour
 {
     
     private PlayerInput playerInput; // reference to c# player input script
-
-    // tried to make it private and a getter function but still did not work
-    public PlayerInput.OnFootActions onFoot; // reference to movement
-
     private PlayerMotor motor; // property for player movement script
     private PlayerLook look; // property for player look script
 
-    // Start is called before the first frame update
+    // needs to be public such that it is accessable in all functions using it
+    public PlayerInput.OnFootActions onFoot; // reference to movement
+
     void Awake()
     {
         // create new instance of class PlayerInput and get all info needed for movement
