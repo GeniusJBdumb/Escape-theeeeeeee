@@ -1,18 +1,5 @@
 {
   "dependencies": {
-    "com.blendernodesgraph.core": {
-      "version": "https://github.com/Warwlock/blender-nodes-subgraph.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "5d61d3facb08e2f7230a166d90fee260dfaf1ca3"
-    },
-    "com.unity.2d.sprite": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
     "com.unity.collab-proxy": {
       "version": "2.0.1",
       "depth": 0,
@@ -95,17 +82,6 @@
       "source": "registry",
       "dependencies": {
         "com.unity.modules.physics": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.probuilder": {
-      "version": "5.0.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.settings-manager": "1.0.3",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
