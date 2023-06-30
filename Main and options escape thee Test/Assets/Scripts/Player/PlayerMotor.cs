@@ -35,12 +35,10 @@ public class PlayerMotor : MonoBehaviour
 
         // set position values in move vector to given input coordinates
         moveDirection.x = input.x;
-        moveDirection.z = input.y; // apply y component to z axis ->         translates vertical movement in forward backward movement
-
+        moveDirection.z = input.y; // apply y component to z axis -> ranslates vertical movement in forward backward movement
 
         // move with given speed but add Time.deltaTime to get scaled movement for each engine where game is running on
-        // expl. each computer has different framerate etc. makes game run same on each
-
+        // reason: each computer has different framerate etc. makes game run same on each
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
 
         // to apply constant gravity force to player for constant velocity on different devices
@@ -51,17 +49,15 @@ public class PlayerMotor : MonoBehaviour
             playerVelocity.y = -2f; // set velocity to some small negative value
 
         controller.Move(playerVelocity * Time.deltaTime);
-
         //Debug.Log(playerVelocity.y); // to see how much force is applied
     }
 
     // jump function for actual jumping
-
     public void Jump()
     {
-        if (isGrounded) // check if we are already jumping -> no duble jumps allowed
+        if (isGrounded) // check if we are already jumping -> no double jumps allowed
 
-            // set the velocity and allow to jump by considering the gravity  and the settled height
+            // set the velocity and allow to jump by considering the gravity and the settled height
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
     }
 

@@ -18,10 +18,10 @@ public class OptionsVolume : MonoBehaviour
         }
         else
         {
-                Load();  //load from other scenes
+            Load();  //load from other scenes
             
         }
-
+        Debug.Log("Volume is set");
     }
 
     // function which sets float from audioMixer to float set with slider in game

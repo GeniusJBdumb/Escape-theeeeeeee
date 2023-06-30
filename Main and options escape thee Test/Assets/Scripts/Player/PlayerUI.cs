@@ -1,3 +1,4 @@
+// this script is similar to the Update win timer script which just updates the text for an interactable
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -8,7 +8,6 @@ using UnityEngine.InputSystem;
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
     
-    private InputManager inputManager;// reference to input manager NO NEED??????
     public Inventory _Inventory; // reference to inventory
     // to sto check if item has been droped out of inventorypanel
     public void OnDrop(PointerEventData eventData)
@@ -25,6 +24,5 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
                 item.OnDrop();
             }
         }
-
     }
 }

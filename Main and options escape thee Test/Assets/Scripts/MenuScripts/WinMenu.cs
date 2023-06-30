@@ -7,8 +7,8 @@ using TMPro;
 public class WinMenu : MonoBehaviour
 {
 
-    public UpdateWinTime updater;
-    public TMP_Text targetTextMesh;
+    public UpdateWinTime updater; // the reference for the TMPro button which is holds the text for the time needed display 
+    public TMP_Text targetTextMesh; // the text string from the game scene
 
     // if main menu gets pressed
     public void GoToMainMenu()

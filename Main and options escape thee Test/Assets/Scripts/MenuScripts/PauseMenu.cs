@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         // for pausing stop ingame clock -> zero
         Time.timeScale = 0f;
         isPaused = true;
+        Debug.Log("Paused Game");
     }
 
     // if the game gets resumed
@@ -54,6 +55,7 @@ public class PauseMenu : MonoBehaviour
         // for resuming start ingame clock again -> 1
         Time.timeScale = 1f;
         isPaused = false;
+        Debug.Log("Resumed Game");
     }
 
     // if main Menu gets pressed start game

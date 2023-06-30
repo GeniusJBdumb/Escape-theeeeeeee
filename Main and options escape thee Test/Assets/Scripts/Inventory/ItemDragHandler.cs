@@ -9,7 +9,6 @@ using TMPro;
 
 public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private InputManager inputManager; // reference to input manager NO NEED??????
     public IInventoryItem Item {get; set;} // reference to inventoryitem e.g. fireextinguisher
     public TextMeshProUGUI infoline;
 
@@ -42,7 +41,6 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IPo
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        //TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
         infoline.text = "";
     }
 

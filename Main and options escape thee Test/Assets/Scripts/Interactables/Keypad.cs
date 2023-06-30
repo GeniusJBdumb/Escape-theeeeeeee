@@ -1,3 +1,4 @@
+// this script sits on the red keypad object I created
 using System.Collections;
 using System.Collections.Generic;
 using System;

@@ -1,3 +1,4 @@
+// from this class each inverntory item inherits as subclass to make easy creation of new item objects possible (template for the objects)
 using System;
 using System.Collections;
 using System.Collections.Generic;

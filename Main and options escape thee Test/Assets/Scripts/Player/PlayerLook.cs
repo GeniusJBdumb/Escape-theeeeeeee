@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// script which implements the function of looking around and rotating the camera according to player mouse movement
 public class PlayerLook : MonoBehaviour
 {
     public Camera cam; // property for camera
@@ -26,8 +27,5 @@ public class PlayerLook : MonoBehaviour
 
         // for looking to left and right -> rotate player (with object since cam on player)
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
-    
     }
-
-
 }

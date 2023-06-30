@@ -1,3 +1,4 @@
+// script that checks if the game overcondition is met(the limit of timer is reached meaning the text is "GAME OVER")
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class PlayerGameOver : MonoBehaviour
         {
             // go to game over scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("I checked -> The time has run out");
         }
     }
 }

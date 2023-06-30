@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Heads-Up Display which handels the inventory system and inventory user interface
 public class HUD : MonoBehaviour
 {
-    
     public Inventory Inventory; // reference to the inventory
     
     // Start is called before the first frame update
     void Start()
     {
         Inventory.ItemAdded += InventoryScript_ItemAdded; // to notify itemadded event if item is added
-        Inventory.ItemRemoved += Inventory_ItemRemoved; // to notify itemadded event if item is added
+        Inventory.ItemRemoved += Inventory_ItemRemoved; // to notify itemremoved event if item is removed
     }
 
     // function to handle inventory adding
@@ -20,7 +20,7 @@ public class HUD : MonoBehaviour
     {
         // find the created panel for inventory
         Transform inventoryPanel = transform.Find("InventoryPanel");
-        //Debug.Log("found panel" + inventoryPanel);
+        Debug.Log("found panel" + inventoryPanel);
         
         // loop through all 9 slots
         foreach(Transform slot in inventoryPanel)
@@ -40,7 +40,6 @@ public class HUD : MonoBehaviour
                 
                 // store reference to item
                 itemDragHandler.Item = e.Item;
-                // need to add what happence if store item smth like referecne to object
                 break;
             }
         }
@@ -60,14 +59,15 @@ public class HUD : MonoBehaviour
             Transform imageTransform = slot.GetChild(0).GetChild(0); 
             Image image = imageTransform.GetComponent<Image>();
             
-            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>(); // get itme draghandler class
+            ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>(); // get item draghandler class
             
             // if there is an item in the UI
+            // Note: here you need == the equals() function does not work
             if(itemDragHandler.Item == e.Item)
             {
-                image.enabled = false; // smake image of slot invisible
+                image.enabled = false; // make image of slot invisible
                 image.sprite = null; // actually remove the image from the inventoryslot
-                // Debug.Log("loop through slots and put in image");
+                // Debug.Log("loop through slots and removed image");
                 
                 // remove  reference to item
                 itemDragHandler.Item = null;
@@ -75,5 +75,4 @@ public class HUD : MonoBehaviour
             }
         }
     }
-
 }

@@ -1,3 +1,4 @@
+// script of mainmenu canvas to implement the scene switching functions -> depending on which button gets pressed the functions get executed
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         // have Main as Scene 0 in build Index and Game in Index 1 --> current Index + 1 
-        // other option in loadScene("name of scene")
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        //add debug message
         Debug.Log("PLayer Quit game");
     }
 }

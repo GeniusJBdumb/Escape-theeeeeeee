@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(Interactable),true)] // script does also affect child classes of Interacable
-
+// Note: for something to be an interactable it needs to be on Layer: interactable
 public class InteractableEditor : Editor // to inherit from Editor
 {
     public override void OnInspectorGUI() // gets called everytime unity updates editor interface 

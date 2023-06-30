@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     private List<IInventoryItem> mItems = new List<IInventoryItem>(); // list for the items in inventory
     
     public event EventHandler<InventoryEventArgs> ItemAdded; // ItemAdded as function to add items to list
-    public event EventHandler<InventoryEventArgs> ItemRemoved;
+    public event EventHandler<InventoryEventArgs> ItemRemoved; 
     
     
     // function to add items
