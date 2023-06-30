@@ -132,7 +132,7 @@ Together we fixed the last problems.
 Therefore first I made a lot of commits and then Lena.
 For the Problems please have a look in the document “Problems and Fixes” in our group folder. There we listed some of the major problems.
 
-##Some notes: 
+## Some notes: 
 We still included Debug.Logs which get displayed if one plays the game in the Unity editor to assure that everything works fine during playing. 
 In the code you find comments which explain functions and functionalities.
 We commented out some Debug.Log messages. These can be used later if one wants to expand and further develop the game because at these points most changes might be done and most errors might arise. But they are not relevant for the currents state of the game and the general checking if the current game works as intended. This provides the feature that one can just simple "decomment" the debugs and use them again and one has directly a clue where to search for possible problems.
