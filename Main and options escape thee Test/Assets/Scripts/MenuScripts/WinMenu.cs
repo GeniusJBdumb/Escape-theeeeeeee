@@ -15,7 +15,6 @@ public class WinMenu : MonoBehaviour
     {
 
         // have Main as Scene 0 in build Index and Win in Index 1 --> current Index - 3 
-        // other option in loadScene("name of scene")
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
 
     }
@@ -31,16 +30,17 @@ public class WinMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        //add debug message
+        
         Debug.Log("PLayer Quit game");
     }
     
-    // Start is called before the first frame update
+    // If the Win scene is build for the first time
     void Start()
     {
-        targetTextMesh = WinTrigger.textToPass; // get the needed time
+        targetTextMesh = WinTrigger.textToPass; // get the needed time text of the player of the game scene by getting the value of texToPass from the WinTrigger SCript
         Debug.Log("I got the TEEEEXXXXT" + targetTextMesh.text);
-        updater.UpdateText(targetTextMesh.text); // update the text at the object (the time needed button which contains the text see win menu canvas script assignment)
+
+        updater.UpdateText(targetTextMesh.text); // update the text at the object (the "time needed" button which contains the text (see win menu canvas script assignment))
     }
 
 }

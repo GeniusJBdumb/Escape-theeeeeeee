@@ -1,24 +1,22 @@
 using UnityEngine;
-//#if UNITY_EDITOR
 using UnityEditor;
-//endif
 
-//#if UNITY_EDITOR
 [CustomEditor(typeof(Interactable),true)] // script does also affect child classes of Interacable
 
 public class InteractableEditor : Editor // to inherit from Editor
 {
     public override void OnInspectorGUI() // gets called everytime unity updates editor interface 
     {
-        Interactable interactable = (Interactable)target; // strore instance of interactable script target: current gameobject which is inspected cast object to interqctable
+        Interactable interactable = (Interactable)target; // strore instance of interactable script target: current gameobject which is inspected -> cast object to interactable
+        
+        // if we haven an Eventonly interactable
         if(target.GetType() == typeof(EventOnlyInteractable))
         {
-            // here component will be completely blank
-            // --> manually build prompt message field
+            // here the component will be completely blank --> manually build prompt message field
             interactable.promptMessage = EditorGUILayout.TextField("Prompt Message", interactable.promptMessage); // event only interactable
-            EditorGUILayout.HelpBox("EventOnlyInteract. can ONLY use UnityEvents.", MessageType.Info);// remove use events boolean bcs events only 
+            EditorGUILayout.HelpBox("EventOnlyInteract. can ONLY use UnityEvents.", MessageType.Info); // this gets displayed as helper info in the unity engine 
             
-            // --> if no interaction event, then add one
+            // --> if there is no interaction event, then add one
             if(interactable.GetComponent<InteractionEvent>() == null)
             {
                 interactable.useEvents = true;
@@ -44,7 +42,4 @@ public class InteractableEditor : Editor // to inherit from Editor
             }
         }    
     }
-
 }
-
-//#endif
