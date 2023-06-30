@@ -39,7 +39,6 @@ public class WinMenu : MonoBehaviour
     void Start()
     {
         targetTextMesh = WinTrigger.textToPass; // get the needed time
-        targetTextMesh.text = targetTextMesh.text; // set the text of the TMP_Text to the given text
         Debug.Log("I got the TEEEEXXXXT" + targetTextMesh.text);
         updater.UpdateText(targetTextMesh.text); // update the text at the object (the time needed button which contains the text see win menu canvas script assignment)
     }
