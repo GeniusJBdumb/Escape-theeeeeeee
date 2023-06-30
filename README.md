@@ -1,5 +1,5 @@
-# Escape-theeeeeeee
-Escape-theeeeeeee is a small ecape room 3D game. It was developed as a project for Introduction to Unity SS 2023 and serves as a submission for Group 42.
+# Escape-theeeeeeee repository for Escape the B
+Escape the B is a small ecape room 3D game. It was developed as a project for Introduction to Unity SS 2023 and serves as a submission for Group 42.
 Followed up, we provide a description about our features, how to play the game and the way of building and programming our game.
 
 NOTE: The game as Unity project has the name "Main and options escape thee Test". Initially we had an other thought about how we both are going to work on the project, but it turned out differently (see work flow). In the end we did not dare to change the file name and thereby risking that our project is gone.
