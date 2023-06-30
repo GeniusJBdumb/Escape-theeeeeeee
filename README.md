@@ -95,6 +95,7 @@ When the time is up, then you have lost because you died from smoke poisoning.
 ## Installation
 
 1. Clone the repository using `git clone [repository URL]`.
+2. Download the repository as a .zip file
 
 Option 1: Double click on the game with the Burger icon and play the game
 
