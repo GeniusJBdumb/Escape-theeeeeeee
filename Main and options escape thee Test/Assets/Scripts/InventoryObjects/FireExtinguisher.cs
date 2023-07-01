@@ -90,12 +90,14 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
     //As long as the fire extinguisher is in the fire display text
     public void OnTriggerStay(Collider other)
     {
+        Debug.Log("Extinguisher is in fire");
         infoline.text = "Shit! This one does not fit!";
     }
 
     //When the  Fire Extinguisher leaves the fire remove the displayed text
     public void OnTriggerExit(Collider other)
     {
+        Debug.Log("Extinguisher is not fire anymore");
         infoline.text = "";
     }
 }
