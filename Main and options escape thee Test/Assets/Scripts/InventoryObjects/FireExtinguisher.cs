@@ -8,7 +8,8 @@ using TMPro;
 public class FireExtinguisher : Interactable, IInventoryItem // inherites from the IInventoryItem class
 {
     [SerializeField]
-    string extinguishingAgent;
+    public string extinguishingAgent;
+    public TextMeshProUGUI infoline;
 
     // give object a name and an image to put in inventory later
     public string Name
@@ -31,15 +32,19 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
 
     }
     
+    //called on Start
+    void Start(){
+
+        infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>(); //find the Infoline
+
+    }
+
     // when the object is picked up
     public void OnPickup()
     {
         // pick and drop at certain places and when collision with objcet fire gets extinguished
 
-        //In case the feedback text that you can not apply the extinguisher on the fire, is not removed. 
-        // This is based on the problem that the Coroutine is called in onTriggerEnter(), 
-        // because the Trigger is removed before the function is fully compiled leading to not remove the text after displaying the message
-        TextMeshProUGUI infoline = GameObject.Find("InfoLine").GetComponent<TextMeshProUGUI>();
+        //Remove feedback text saying you can not apply the extinguisher on the fire.
         infoline.text = "";
 
         gameObject.SetActive(false); // object can basically not do anything now its gone
@@ -62,7 +67,7 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
         }
     }
 
-    // Triggered when the collider of the Fire extinguisher hits another collider
+    // Triggered when the collider of the Fire extinguisher hits another collider. Inherited from Monobehavior
     public void OnTriggerEnter(Collider other)
     {   
         //check whether the fire extinguisher is suitable for the fire (properties defined by us on the gameobject)
@@ -71,13 +76,6 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
             other.gameObject.SetActive(false); //deactivate the fire
         }
 
-        //Give a Feedback that one can not use the extinugisher on the fire
-        else if(extinguishingAgent != other.gameObject.GetComponent<Fire>().howToExtinguish)
-        {
-            StartCoroutine(displayInfo("Shit! This one does not fit!"));
-        }
-        
-        
         //In case there are mutliple Flames to be extinguished with the same FireExtinguisher Object,
         // we only want to remove the extinguisher from the Scene when all fires of the specific type are disabled/extinguished
 
@@ -87,5 +85,17 @@ public class FireExtinguisher : Interactable, IInventoryItem // inherites from t
         {
             gameObject.SetActive(false); //deactivate fire extinguisher
         }
+    }
+
+    //As long as the fire extinguisher is in the fire display text
+    public void OnTriggerStay(Collider other)
+    {
+        infoline.text = "Shit! This one does not fit!";
+    }
+
+    //When the  Fire Extinguisher leaves the fire remove the displayed text
+    public void OnTriggerExit(Collider other)
+    {
+        infoline.text = "";
     }
 }
