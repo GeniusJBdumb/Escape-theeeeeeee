@@ -47,7 +47,8 @@ When the time is up, then you have lost because you died from smoke poisoning.
 
 ## Walkthrough Video (Spoiler)
 You can find a full walktrough with audio commentary [here](https://myshare.uni-osnabrueck.de/f/2b879764d5da4c4abb3a/).
-It serves as the obligatory presentation as part of the course's submission.
+It serves as the obligatory presentation as part of the course's submission. 
+Note: You might need to download the video since myshare does take a long time for loading and the video might not get played without interruptions.
 
 ## Features and Implementations
 
