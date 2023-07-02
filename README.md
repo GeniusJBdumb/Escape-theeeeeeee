@@ -7,12 +7,12 @@ NOTE: The game as Unity project has the name "Main and options escape thee Test"
 ## Table of Contents
 
 - [Game Description](#game-description)
-- [Features and Implementations](#featuresandimplementations)
-- [Walkthrough Video (Spoiler)](#WalkthroughVideo(Spoiler))
+- [Features and Implementations](#features-and-implementations)
+- [Walkthrough Video (Spoiler)](#Walkthrough-Video-(Spoiler))
 - [Installation](#installation)
 - [Usage](#usage)
-- [Work flow](#workflow)
-- [Some notes](#somenotes)
+- [Workflow](#workflow)
+- [Some notes](#some-notes)
 - [License](#license)
 
 ## Game Description
