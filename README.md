@@ -99,7 +99,7 @@ It serves as the obligatory presentation as part of the course's submission.
 
 ## Installation
 
-1. Clone the repository using `git clone [repository URL]`.
+1. Clone the repository using `git clone https://github.com/GeniusJBdumb/Escape-theeeeeeee.git`.
 2. Download the repository as a .zip file
 
 Option 1: Double click on the game with the Burger icon and play the game
