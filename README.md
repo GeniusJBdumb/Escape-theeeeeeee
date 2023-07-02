@@ -8,6 +8,7 @@ NOTE: The game as Unity project has the name "Main and options escape thee Test"
 
 - [Game Description](#game-description)
 - [Features and Implementations](#featuresandimplementations)
+- [Walkthrough Video](#walkthroughvideo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Work flow](#workflow)
@@ -44,7 +45,7 @@ Movement:
 Caution:
 When the time is up, then you have lost because you died from smoke poisoning.
 
-Walkthrough (Spoiler):
+## Walkthrough Video (Spoiler):
 You can find a full walktrough with audio commentary [here](https://myshare.uni-osnabrueck.de/f/2b879764d5da4c4abb3a/).
 It serves as the obligatory presentation as part of the course's submission.
 
