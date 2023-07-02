@@ -8,7 +8,7 @@ NOTE: The game as Unity project has the name "Main and options escape thee Test"
 
 - [Game Description](#game-description)
 - [Features and Implementations](#features-and-implementations)
-- [Walkthrough Video (Spoiler)](#Walkthrough-Video-(Spoiler))
+- [Walkthrough Video (Spoiler)](#walkthrough-video-(spoiler))
 - [Installation](#installation)
 - [Usage](#usage)
 - [Workflow](#workflow)
